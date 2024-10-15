@@ -1,9 +1,18 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import HomeLayout from "./components/HomeLayout";
+import Home from "./routes/home/Home";
+import About from "./routes/about/About";
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <Routes>
+        <Route path="/" element={<HomeLayout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+        </Route>
+      </Routes>
     </>
   );
 }
